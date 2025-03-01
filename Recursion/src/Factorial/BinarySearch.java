@@ -24,29 +24,29 @@ public class BinarySearch {
 		int[] array = new int[size];
 		
 		for(int i=0;i<array.length;i++) {
-			array[i] = input.nextInt();
+			array[i] = input.nextInt(); //asking the user to add data in the array "array[i]" until i <length of an array
 		}
 		
-		int low = 0;
-		int high = array.length-1;
+		int low = 0;	// initializing the lowest array index
+		int high = array.length-1;	//initializing the index of the last index in an array
 		
-		System.out.println(number+" is in index " + binarySearch(array, number,0,array.length-1));
+		System.out.println(number+" is in index " + binarySearch(array, number,0,array.length-1));	//displaying the index of the number in an array using binarySearch method
 	}
 	
 	public static int binarySearch(int[] data, int target, int low, int high) {
 		if(low>high) {
 			return -1;
 		}
-		int mid = (low+high)/2;
+		int mid = (low+high)/2;	//mid index is hald of low plus high
 		
-		if(target==data[mid]) {
-			return mid;
+		if(target==data[mid]) {	//checking if the number we are searching is the middle of the array
+			return mid;	//if yes, returning the mid index
 		}
-		if(target>data[mid]) {
-			return binarySearch(data, target, mid+1, high);
+		if(target>data[mid]) { //checking id the target number is greater to the mid, 
+			return binarySearch(data, target, mid+1, high);	//if true, then recursively run the method binarysearch to initialize the lowest/left index to mid+1
 		}
-		else {
-			return binarySearch(data, target,low, mid-1 );
+		else {	//if target is less than the mid value
+			return binarySearch(data, target,low, mid-1 );//if true recursively run the binary search method, and in this case change the last/right index to mid-1
 		}
 		
 		
