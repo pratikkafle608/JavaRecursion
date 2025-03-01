@@ -19,8 +19,8 @@ public class BinarySearch {
 		
 		
 		Scanner input = new Scanner(System.in);
-		int number= input.nextInt();
-		int size = input.nextInt();
+		int number= input.nextInt();	//asking user to enter the number to search in an array  
+		int size = input.nextInt();	//asking user to enter the size of the array
 		int[] array = new int[size];
 		
 		for(int i=0;i<array.length;i++) {
